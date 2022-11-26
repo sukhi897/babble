@@ -14,8 +14,8 @@ class RegistrationScreen extends StatefulWidget {
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _auth = FirebaseAuth.instance;
   bool showSpinner = false;
-  String email;
-  String password;
+  String email = "";
+  String password = "";
 
   @override
   Widget build(BuildContext context) {
