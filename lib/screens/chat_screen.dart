@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:babble/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 final _firestore = FirebaseFirestore.instance;
 User? loggedInUser;
@@ -38,6 +39,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kbackgroundColor,
       appBar: AppBar(
         leading: null,
         automaticallyImplyLeading: false,
@@ -50,7 +52,7 @@ class _ChatScreenState extends State<ChatScreen> {
           //     }),
           PopupMenuButton<Menu>(
               icon: Icon(Icons.account_circle_outlined),
-              elevation: 4.0,
+              elevation: 3.0,
               // Callback that sets the selected popup menu item.
               onSelected: (Menu item) {
                 if (item == Menu.logout) {
@@ -66,8 +68,8 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   ]),
         ],
-        title: Text('⚡️Chat'),
-        backgroundColor: Colors.lightBlueAccent,
+        title: Text('Babble ️Chat'),
+        backgroundColor: bdazzledBlue,
       ),
       body: SafeArea(
         child: Column(
@@ -128,9 +130,12 @@ class MessagesStream extends StatelessWidget {
           return Text(snapshot.error.toString());
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(
-            child: CircularProgressIndicator(
-              backgroundColor: Colors.lightBlueAccent,
+          return Expanded(
+            child: Center(
+              child: SpinKitSpinningLines(
+                color: oxfordBlue,
+                itemCount: 9,
+              ),
             ),
           );
         }
@@ -196,7 +201,7 @@ class MessageBubble extends StatelessWidget {
                     topRight: Radius.circular(30.0),
                   ),
             elevation: 5.0,
-            color: isMe ? Colors.lightBlueAccent : Colors.white,
+            color: isMe ? bdazzledBlue : Colors.white,
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               child: Text(
