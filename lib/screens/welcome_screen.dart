@@ -41,7 +41,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       backgroundColor: kbackgroundColor, //animation.value,
       body: Center(
         child: Container(
-          constraints: BoxConstraints(minWidth: 100, maxWidth: 500),
+          constraints: BoxConstraints(minWidth: 100, maxWidth: 400),
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.0),
             child: Column(

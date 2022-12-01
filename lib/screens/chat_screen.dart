@@ -69,7 +69,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ]),
         ],
         title: Text('Babble ️Chat'),
-        backgroundColor: bdazzledBlue,
+        backgroundColor: oxfordBlue,
       ),
       body: SafeArea(
         child: Column(

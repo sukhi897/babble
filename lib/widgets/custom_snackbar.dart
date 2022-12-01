@@ -47,7 +47,7 @@ class CustomSnackbar {
           ],
         ),
         backgroundColor: backgroundColor ?? Colors.white,
-        duration: const Duration(milliseconds: 3000),
+        duration: const Duration(milliseconds: 5000),
         // width: 350.0, // Width of the SnackBar.
         padding: const EdgeInsets.symmetric(
           horizontal: 10.0,
